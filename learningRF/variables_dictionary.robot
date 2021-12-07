@@ -36,3 +36,12 @@ Test4
     FOR    ${item}    IN    @{DICT_GLOBAL.keys()}
        Log    ${item}         
     END
+    
+Test 5
+    [Documentation]    Loop inside a dictionary to print keys and values
+    # @ is used for list
+    FOR    ${key_value}    IN    @{DICT_GLOBAL.items()}
+            ${key}=  set variable  ${key_value}[0]
+            ${value}=  set variable  ${key_value}[1]
+            log  Key: ${key}; Value: ${value}
+    END
